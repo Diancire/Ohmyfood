@@ -1,0 +1,36 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+header {
+    font-family: 'Shrikhand', cursive;
+    text-align: center;
+    box-shadow: 0 0 8px #001900;
+    margin: 0;
+    position: relative;
+    padding: 10px 0;
+}
+
+header h1 {
+    margin: 0;
+}
+
+.localisation {
+    display: flex;
+    justify-content: center;
+    background-color: #F3F3F3;
+    text-align: center;
+}
+
+.fa-location-dot {
+    padding: 15px;
+}
+
+.reservation {
+    text-align: center;
+}
