@@ -1,5 +1,8 @@
+/* GENERAL */
+
 * {
     box-sizing: border-box;
+    --box-shadox: 6px 12px 39px -18px rgba(0,0,0,0.75);
 }
 
 body {
@@ -7,10 +10,12 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
+/* HEADER */
+
 header {
     font-family: 'Shrikhand', cursive;
     text-align: center;
-    box-shadow: 0 0 8px #001900;
+    box-shadow: 0 1px 5px rgb(158, 157, 157);
     margin: 0;
     position: relative;
     padding: 10px 0;
@@ -19,6 +24,8 @@ header {
 header h1 {
     margin: 0;
 }
+
+/* LOCALISATION */
 
 .localisation {
     display: flex;
@@ -31,6 +38,22 @@ header h1 {
     padding: 15px;
 }
 
+/* RESERVATION */
+
 .reservation {
     text-align: center;
+}
+
+.btn-reservation {
+    border-radius: 30px;
+    border: none;
+    background: linear-gradient(to top, #9356DC, #FF79DA );
+    color: white;
+    font-size: 15px;
+    padding: 1rem ;
+    box-shadow: var(--box-shadox);
+}
+
+.btn-reservation:hover {
+transform: scale(1.03);
 }
