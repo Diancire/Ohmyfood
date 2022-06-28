@@ -1,0 +1,23 @@
+{
+  "name": "diallo_diancire_1_code_062022",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+   "sass" : "sass -w scss:css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Diancire/Diallo_Diancire_1_code_062022.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Diancire/Diallo_Diancire_1_code_062022/issues"
+  },
+  "homepage": "https://github.com/Diancire/Diallo_Diancire_1_code_062022#readme",
+  "dependencies": {
+    "sass": "^1.53.0"
+  }
+}

@@ -1,59 +1,102 @@
-/* GENERAL */
-
 * {
-    box-sizing: border-box;
-    --box-shadox: 6px 12px 39px -18px rgba(0,0,0,0.75);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --font-family-title: "Shrikhand", cursive;
+  --font-family:"Roboto", sans-serif;
+  --primary: #9356DC;
+  --secondary: #FF79DA;
+  --thirdly: #99E2D0;
+  --background: #fafafa;
+  --gray-dark: #999;
+  --box-shadow: 6px 6px 8px -4px rgba(0,0,0,0.5);
 }
 
 body {
-    margin: 0;
-    font-family: 'Roboto', sans-serif;
+  font-family: var(--font-family);
 }
 
-/* HEADER */
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
 
 header {
-    font-family: 'Shrikhand', cursive;
-    text-align: center;
-    box-shadow: 0 1px 5px rgb(158, 157, 157);
-    margin: 0;
-    position: relative;
-    padding: 10px 0;
+  font-family: var(--font-family-title);
+  text-align: center;
+  padding: 0.3rem;
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.25);
 }
-
-header h1 {
-    margin: 0;
-}
-
-/* LOCALISATION */
 
 .localisation {
-    display: flex;
-    justify-content: center;
-    background-color: #F3F3F3;
-    text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #dedddd;
+  padding: 0.5rem;
 }
-
-.fa-location-dot {
-    padding: 15px;
+.localisation i {
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
 }
-
-/* RESERVATION */
 
 .reservation {
-    text-align: center;
+  text-align: center;
+  background-color: var(--background);
+}
+.reservation h2 {
+  padding: 2rem 0 0.5rem 0;
+  font-size: 2rem;
+}
+.reservation p {
+  margin-bottom: 2rem;
+  font-weight: 300;
+}
+.reservation button {
+  color: white;
+  font-size: 1rem;
+  padding: 1rem 1rem;
+  border: none;
+  border-radius: 2rem;
+  background: linear-gradient(to top, var(--primary), var(--secondary));
+  margin-bottom: 2rem;
+  box-shadow: var(--box-shadow);
+}
+.reservation button:hover {
+  transform: scale(1.02);
+  opacity: 0.9;
 }
 
-.btn-reservation {
-    border-radius: 30px;
-    border: none;
-    background: linear-gradient(to top, #9356DC, #FF79DA );
-    color: white;
-    font-size: 15px;
-    padding: 1rem ;
-    box-shadow: var(--box-shadox);
+.fonctionnement {
+  padding: 0 1rem;
+}
+.fonctionnement ol {
+  padding: 0 1rem;
+  display: flex;
+  gap: 1rem;
+}
+@media (max-width: 767px) {
+  .fonctionnement ol {
+    flex-direction: column;
+  }
+}
+.fonctionnement li {
+  background-color: var(--background);
+  padding: 1.5rem 2rem;
+  box-shadow: var(--box-shadow);
+  border-radius: 2rem;
+}
+.fonctionnement li:hover {
+  transform: scale(1.02);
+}
+.fonctionnement i {
+  margin-right: 1rem;
 }
 
-.btn-reservation:hover {
-transform: scale(1.03);
-}
+/*# sourceMappingURL=style.css.map */

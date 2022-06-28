@@ -1,0 +1,14 @@
+body {
+    font-family: var(--font-family);
+}
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+@mixin zoom {
+    transform: scale(1.02)
+}
