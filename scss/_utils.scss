@@ -1,0 +1,22 @@
+@mixin zoom {
+    transform: scale(1.02);
+    opacity: 0.9;
+}
+
+@mixin btn-steps {
+    content: counter(steps);
+    counter-increment: steps;
+    padding: 0.5rem;
+    width: 1rem;
+    height: 1rem;
+    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:var(--primary);
+    border-radius: 40px;
+    position: absolute;
+    bottom: 1rem;
+    left: -1rem;
+    color: white;
+}

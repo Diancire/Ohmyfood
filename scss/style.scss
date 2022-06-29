@@ -1,6 +1,7 @@
 @import 'reset';
 @import 'variables';
 @import 'base';
+@import 'utils';
 @import 'media-queries';
 
 // HEADER
@@ -31,10 +32,6 @@ header {
 .reservation {
     text-align: center;
     background-color: var(--background);
-    h2 {
-        padding: 2rem 0 0.5rem 0;
-        font-size: 2rem;
-    }
     p {
         margin-bottom: 2rem;
         font-weight: 300;
@@ -59,10 +56,14 @@ header {
 
 .fonctionnement {
     padding: 0 1rem;
+    counter-reset: steps;
     ol {
-        padding: 0 1rem;
+        padding: 0 1rem 2rem 1rem;
         display: flex;
-        gap: 1rem;
+        gap: 2rem;
+        @include md {
+            flex-direction: column;
+        }
         @include sm {
             flex-direction: column;
         }
@@ -71,10 +72,66 @@ header {
         padding: 1.5rem 2rem;
         box-shadow: var(--box-shadow);
         border-radius: 2rem;
+        position: relative;
         &:hover {
             @include zoom;
         }
+        &::before {
+           @include btn-steps;
+        }
     } i {
         margin-right: 1rem;
+        color: var(--gray-light);
+        font-size: 1rem;
+    }
+}
+
+// RESTAURANT
+
+.restaurants {
+    background-color: var(--background);
+    padding: 0 1rem;
+    .restaurants-menu {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        @include sm {
+            grid-template-columns: 1fr;
+        }
+        .new {
+            position: relative;
+        }
+        .new:before {
+            content: "Nouveau";
+            position: absolute;
+            height: 2rem;
+            width: 5rem;
+            background-color: var(--thirdly);
+            color: darken($color: #99E2D0, $amount: 50);
+            display: grid;
+            place-items: center;
+            right: 1rem;
+            top: 1rem;
+        }
+    }
+    .restaurants-card {
+        .img-restaurant {
+            height: 15rem;
+            background-size: cover;
+            width: 100%;
+            border-radius: 2rem 2rem 0 0;
+            &.img-restaurant-1 {
+                background-image: url(/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg);
+            }
+            &.img-restaurant-2 {
+                background-image: url(/images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg);
+            }
+            &.img-restaurant-3 {
+                background-image: url(/images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg);
+            }
+            &.img-restaurant-4 {
+                background-image: url(/images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg);
+            }
+        }
     }
 }
