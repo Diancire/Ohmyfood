@@ -20,3 +20,25 @@
     left: -1rem;
     color: white;
 }
+
+@mixin btn-heart {
+    i {
+        font-size: 2rem;
+        position: absolute;
+        right: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    .fa-solid {
+        color: transparent;
+        background-image: linear-gradient(to top, var(--primary), var(--secondary));
+        background-clip: text;
+        -webkit-background-clip: text;
+        opacity: 0;
+        transition: all 0.4s ease-in-out;
+        &:hover {
+            opacity: 1;
+            cursor: pointer;
+        }
+    }     
+}

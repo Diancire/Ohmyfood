@@ -1,0 +1,80 @@
+@import 'animations';
+
+// IMGAGE
+.img-p-resto {
+   width: 100%; 
+   object-fit: cover;
+    height: 50vh;
+    display: block;
+}
+
+.main-restaurants {
+    background-color: var(--background);
+}
+
+// TITLE
+.title {
+    background-color: var(--background);
+    position: relative;
+    border-radius: 2rem 2rem 0 0;
+    height: auto;
+    margin-top: -2rem;
+    h2 {
+        font-family: var(--font-family-title);
+        padding: 2rem 1rem;
+    } 
+    @include btn-heart;
+}
+
+// MENU
+
+.menu {
+    padding: 0 1rem;
+    display: grid;
+    grid-template-columns: (3, 1fr);
+    gap: 1rem;
+    @include sm {
+        grid-template-columns: (1, 1fr);
+    }
+    .menu-plats {
+
+        .menu-card {
+            background-color: white;
+            display: flex;
+            border-radius: 1.5rem;
+            margin-top: 1rem;
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            .menu-card-texte {
+                padding: 1rem;
+            }
+            .menu-card-price {
+                padding: 1rem;
+                margin-left: auto;
+                font-weight: bold;
+                display: flex;
+                align-items: flex-end;
+            }
+            .menu-card-valid {
+                background-color: var(--thirdly);
+                margin-right: -4rem;
+                width: 4rem;
+                transition: all 0.4s;
+                display: grid;
+                place-items: center;
+                i {
+                    font-size: 1.5rem;
+                    color: white;
+                }
+            }
+            &:hover {
+                .menu-card-valid {
+                margin-right: 0rem;
+                }
+                i {
+                    animation: demi-turn 1s ease-in-out;
+                }
+            }
+        }
+    }
+}

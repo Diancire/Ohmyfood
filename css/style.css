@@ -11,8 +11,9 @@
   --secondary: #FF79DA;
   --thirdly: #99E2D0;
   --background: #fafafa;
-  --gray-dark: #999;
-  --gray-light: #7e7e7e;
+  --background-grey-dark:#353535;
+  --grey-dark: #999;
+  --grey-light: #7e7e7e;
   --box-shadow: 6px 6px 8px -4px rgba(0,0,0,0.5);
 }
 
@@ -31,15 +32,15 @@ li {
 
 h2 {
   padding: 2rem 0 1rem 0;
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 
 h3 {
   padding: 1rem 0 0.5rem 0;
 }
 
-p {
-  padding-bottom: 0.4rem;
+footer {
+  padding: 0 1rem 2rem 1rem;
 }
 
 header {
@@ -53,12 +54,15 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #dedddd;
+  background-color: #f3f3f3;
   padding: 0.5rem;
 }
 .localisation i {
   font-size: 1rem;
   padding: 0.5rem 1rem;
+}
+.localisation p {
+  padding-bottom: 0;
 }
 
 .reservation {
@@ -134,7 +138,7 @@ header {
 }
 .fonctionnement i {
   margin-right: 1rem;
-  color: var(--gray-light);
+  color: var(--grey-light);
   font-size: 1rem;
 }
 
@@ -146,6 +150,7 @@ header {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
+  padding-bottom: 4rem;
 }
 @media (max-width: 767px) {
   .restaurants .restaurants-menu {
@@ -167,23 +172,148 @@ header {
   right: 1rem;
   top: 1rem;
 }
-.restaurants .restaurants-card .img-restaurant {
+.restaurants .restaurants-card img {
   height: 15rem;
-  background-size: cover;
-  width: 100%;
   border-radius: 2rem 2rem 0 0;
+  width: 100%;
+  object-fit: cover;
 }
-.restaurants .restaurants-card .img-restaurant.img-restaurant-1 {
-  background-image: url(/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg);
+.restaurants .restaurants-card .restaurants-card-description {
+  position: relative;
+  background-color: white;
+  border-radius: 0 0 2rem 2rem;
+  color: black;
 }
-.restaurants .restaurants-card .img-restaurant.img-restaurant-2 {
-  background-image: url(/images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg);
+.restaurants .restaurants-card .restaurants-card-description h3, .restaurants .restaurants-card .restaurants-card-description p {
+  padding-left: 1rem;
 }
-.restaurants .restaurants-card .img-restaurant.img-restaurant-3 {
-  background-image: url(/images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg);
+.restaurants .restaurants-card .restaurants-card-description p {
+  padding-bottom: 1rem;
 }
-.restaurants .restaurants-card .img-restaurant.img-restaurant-4 {
-  background-image: url(/images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg);
+
+footer {
+  background-color: var(--background-grey-dark);
+  color: white;
+}
+footer .footer-logo {
+  font-family: var(--font-family-title);
+  font-weight: 500;
+}
+footer ul li {
+  padding: 0.3rem 0;
+}
+footer ul li a {
+  color: white;
+}
+footer ul li i {
+  padding-right: 0.5rem;
+}
+
+@keyframes demi-turn {
+  0% {
+    transform: rotate(-270deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
+.img-p-resto {
+  width: 100%;
+  object-fit: cover;
+  height: 50vh;
+  display: block;
+}
+
+.main-restaurants {
+  background-color: var(--background);
+}
+
+.title {
+  background-color: var(--background);
+  position: relative;
+  border-radius: 2rem 2rem 0 0;
+  height: auto;
+  margin-top: -2rem;
+}
+.title h2 {
+  font-family: var(--font-family-title);
+  padding: 2rem 1rem;
+}
+.title i {
+  font-size: 2rem;
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.title .fa-solid {
+  color: transparent;
+  background-image: linear-gradient(to top, var(--primary), var(--secondary));
+  background-clip: text;
+  -webkit-background-clip: text;
+  opacity: 0;
+  transition: all 0.4s ease-in-out;
+}
+.title .fa-solid:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.menu {
+  padding: 0 1rem;
+  display: grid;
+  grid-template-columns: 3, 1fr;
+  gap: 1rem;
+}
+@media (max-width: 767px) {
+  .menu {
+    grid-template-columns: 1, 1fr;
+  }
+}
+.menu .menu-plats .menu-card {
+  background-color: white;
+  display: flex;
+  border-radius: 1.5rem;
+  margin-top: 1rem;
+  overflow: hidden;
+  box-shadow: var(--box-shadow);
+}
+.menu .menu-plats .menu-card .menu-card-texte {
+  padding: 1rem;
+}
+.menu .menu-plats .menu-card .menu-card-price {
+  padding: 1rem;
+  margin-left: auto;
+  font-weight: bold;
+  display: flex;
+  align-items: flex-end;
+}
+.menu .menu-plats .menu-card .menu-card-valid {
+  background-color: var(--thirdly);
+  margin-right: -4rem;
+  width: 4rem;
+  transition: all 0.4s;
+  display: grid;
+  place-items: center;
+}
+.menu .menu-plats .menu-card .menu-card-valid i {
+  font-size: 1.5rem;
+  color: white;
+}
+.menu .menu-plats .menu-card:hover .menu-card-valid {
+  margin-right: 0rem;
+}
+.menu .menu-plats .menu-card:hover i {
+  animation: demi-turn 1s ease-in-out;
+}
+
+@keyframes demi-turn {
+  0% {
+    transform: rotate(-270deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
