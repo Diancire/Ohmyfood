@@ -14,7 +14,7 @@
   --background-grey-dark:#353535;
   --grey-dark: #999;
   --grey-light: #7e7e7e;
-  --box-shadow: 6px 6px 8px -4px rgba(0,0,0,0.5);
+  --box-shadow: 6px 6px 8px -4px rgba(153,153,153,0.5);
 }
 
 body {
@@ -190,6 +190,25 @@ header {
 .restaurants .restaurants-card .restaurants-card-description p {
   padding-bottom: 1rem;
 }
+.restaurants .restaurants-card .restaurants-card-description i {
+  font-size: 2rem;
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.restaurants .restaurants-card .restaurants-card-description .fa-solid {
+  color: transparent;
+  background-image: linear-gradient(to top, var(--primary), var(--secondary));
+  background-clip: text;
+  -webkit-background-clip: text;
+  opacity: 0;
+  transition: all 0.4s ease-in-out;
+}
+.restaurants .restaurants-card .restaurants-card-description .fa-solid:hover {
+  opacity: 1;
+  cursor: pointer;
+}
 
 footer {
   background-color: var(--background-grey-dark);
@@ -260,7 +279,7 @@ footer ul li i {
 }
 
 .menu {
-  padding: 0 1rem;
+  margin: 0 1rem;
   display: grid;
   grid-template-columns: 3, 1fr;
   gap: 1rem;
@@ -270,16 +289,39 @@ footer ul li i {
     grid-template-columns: 1, 1fr;
   }
 }
+.menu .menu-plats {
+  overflow: hidden;
+}
+.menu .menu-plats h3 {
+  text-transform: uppercase;
+  font-weight: 300;
+  position: relative;
+}
+.menu .menu-plats h3::after {
+  content: "";
+  position: absolute;
+  bottom: 0.1rem;
+  left: 0rem;
+  height: 0.25rem;
+  width: 3rem;
+  background-color: var(--thirdly);
+}
 .menu .menu-plats .menu-card {
   background-color: white;
   display: flex;
-  border-radius: 1.5rem;
-  margin-top: 1rem;
+  border-radius: 1.2rem;
+  margin: 1rem 0.4rem;
   overflow: hidden;
   box-shadow: var(--box-shadow);
 }
 .menu .menu-plats .menu-card .menu-card-texte {
   padding: 1rem;
+  overflow: hidden;
+}
+.menu .menu-plats .menu-card .menu-card-texte h4, .menu .menu-plats .menu-card .menu-card-texte p {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 .menu .menu-plats .menu-card .menu-card-price {
   padding: 1rem;
@@ -295,6 +337,7 @@ footer ul li i {
   transition: all 0.4s;
   display: grid;
   place-items: center;
+  flex-shrink: 0;
 }
 .menu .menu-plats .menu-card .menu-card-valid i {
   font-size: 1.5rem;

@@ -130,6 +130,7 @@ header {
             p {
                 padding-bottom: 1rem;
             }
+            @include btn-heart;
         }    
     }
 }

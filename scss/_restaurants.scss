@@ -29,7 +29,7 @@
 // MENU
 
 .menu {
-    padding: 0 1rem;
+    margin: 0 1rem;
     display: grid;
     grid-template-columns: (3, 1fr);
     gap: 1rem;
@@ -37,16 +37,36 @@
         grid-template-columns: (1, 1fr);
     }
     .menu-plats {
-
+        overflow: hidden;
+        h3 {
+            text-transform: uppercase;
+            font-weight: 300;
+            position: relative;
+            &::after {
+                content: "";
+                position: absolute;
+                bottom: 0.1rem;
+                left: 0rem;
+                height: 0.25rem;
+                width: 3rem;
+                background-color: var(--thirdly);
+            }
+        }
         .menu-card {
             background-color: white;
             display: flex;
-            border-radius: 1.5rem;
-            margin-top: 1rem;
+            border-radius: 1.2rem;
+            margin: 1rem 0.4rem;
             overflow: hidden;
             box-shadow: var(--box-shadow);
             .menu-card-texte {
                 padding: 1rem;
+                overflow: hidden;
+                h4, p {
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis; 
+                }
             }
             .menu-card-price {
                 padding: 1rem;
@@ -62,6 +82,7 @@
                 transition: all 0.4s;
                 display: grid;
                 place-items: center;
+                flex-shrink: 0;
                 i {
                     font-size: 1.5rem;
                     color: white;
