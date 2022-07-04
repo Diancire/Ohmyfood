@@ -1,5 +1,20 @@
 @import 'animations';
 
+// HEADER
+
+header {
+    position: relative;
+    a {
+        color: black;
+        i {
+            position: absolute;
+            top: 50%;
+            left: 1rem;
+            transform: translateY(-50%);
+        }
+    }
+}
+
 // IMGAGE
 .img-p-resto {
    width: 100%; 
@@ -59,6 +74,13 @@
             margin: 1rem 0.4rem;
             overflow: hidden;
             box-shadow: var(--box-shadow);
+            @for $i from 2 through 4 {
+                &:nth-child(#{$i}) {
+                    animation-delay: 100ms * $i;
+                }
+            }
+            animation: appearance 1s;
+            animation-fill-mode: both;
             .menu-card-texte {
                 padding: 1rem;
                 overflow: hidden;
@@ -89,6 +111,7 @@
                 }
             }
             &:hover {
+                cursor: pointer;
                 .menu-card-valid {
                 margin-right: 0rem;
                 }
@@ -97,5 +120,17 @@
                 }
             }
         }
+    }
+}
+
+.btn-order {
+    text-align: center;
+    height: 9rem;
+    margin-top: 2rem;
+    button { 
+    @include btn-standard;
+    &:hover {
+        @include zoom;
+    }
     }
 }

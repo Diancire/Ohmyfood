@@ -86,7 +86,7 @@ header {
 .reservation button:hover {
   transform: scale(1.02);
   opacity: 0.9;
-  opacity: 0.9;
+  cursor: pointer;
 }
 
 .fonctionnement {
@@ -118,6 +118,7 @@ header {
 .fonctionnement li:hover {
   transform: scale(1.02);
   opacity: 0.9;
+  cursor: pointer;
 }
 .fonctionnement li::before {
   content: counter(steps);
@@ -236,6 +237,29 @@ footer ul li i {
     transform: rotate(0);
   }
 }
+@keyframes appearance {
+  0% {
+    transform: translateY(50%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+header {
+  position: relative;
+}
+header a {
+  color: black;
+}
+header a i {
+  position: absolute;
+  top: 50%;
+  left: 1rem;
+  transform: translateY(-50%);
+}
+
 .img-p-resto {
   width: 100%;
   object-fit: cover;
@@ -313,6 +337,17 @@ footer ul li i {
   margin: 1rem 0.4rem;
   overflow: hidden;
   box-shadow: var(--box-shadow);
+  animation: appearance 1s;
+  animation-fill-mode: both;
+}
+.menu .menu-plats .menu-card:nth-child(2) {
+  animation-delay: 200ms;
+}
+.menu .menu-plats .menu-card:nth-child(3) {
+  animation-delay: 300ms;
+}
+.menu .menu-plats .menu-card:nth-child(4) {
+  animation-delay: 400ms;
 }
 .menu .menu-plats .menu-card .menu-card-texte {
   padding: 1rem;
@@ -343,11 +378,35 @@ footer ul li i {
   font-size: 1.5rem;
   color: white;
 }
+.menu .menu-plats .menu-card:hover {
+  cursor: pointer;
+}
 .menu .menu-plats .menu-card:hover .menu-card-valid {
   margin-right: 0rem;
 }
 .menu .menu-plats .menu-card:hover i {
   animation: demi-turn 1s ease-in-out;
+}
+
+.btn-order {
+  text-align: center;
+  height: 9rem;
+  margin-top: 2rem;
+}
+.btn-order button {
+  color: white;
+  font-size: 1rem;
+  padding: 1rem 1rem;
+  border: none;
+  border-radius: 2rem;
+  background: linear-gradient(to top, var(--primary), var(--secondary));
+  margin-bottom: 2rem;
+  box-shadow: var(--box-shadow);
+}
+.btn-order button:hover {
+  transform: scale(1.02);
+  opacity: 0.9;
+  cursor: pointer;
 }
 
 @keyframes demi-turn {
@@ -356,6 +415,16 @@ footer ul li i {
   }
   100% {
     transform: rotate(0);
+  }
+}
+@keyframes appearance {
+  0% {
+    transform: translateY(50%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
   }
 }
 
