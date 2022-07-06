@@ -1,4 +1,5 @@
 @import 'animations';
+@import 'variables';
 
 // HEADER
 
@@ -24,18 +25,18 @@ header {
 }
 
 .main-restaurants {
-    background-color: var(--background);
+    background-color: $background;
 }
 
 // TITLE
 .title {
-    background-color: var(--background);
+    background-color: $background;
     position: relative;
     border-radius: 2rem 2rem 0 0;
     height: auto;
     margin-top: -2rem;
     h2 {
-        font-family: var(--font-family-title);
+        font-family: $font-family-title;
         padding: 2rem 1rem;
     } 
     @include btn-heart;
@@ -46,10 +47,10 @@ header {
 .menu {
     margin: 0 1rem;
     display: grid;
-    grid-template-columns: (3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
     @include sm {
-        grid-template-columns: (1, 1fr);
+        grid-template-columns: repeat(1, 1fr);
     }
     .menu-plats {
         overflow: hidden;
@@ -64,7 +65,7 @@ header {
                 left: 0rem;
                 height: 0.25rem;
                 width: 3rem;
-                background-color: var(--thirdly);
+                background-color: $third;
             }
         }
         .menu-card {
@@ -73,7 +74,7 @@ header {
             border-radius: 1.2rem;
             margin: 1rem 0.4rem;
             overflow: hidden;
-            box-shadow: var(--box-shadow);
+            box-shadow: $box-shadow;
             @for $i from 2 through 4 {
                 &:nth-child(#{$i}) {
                     animation-delay: 100ms * $i;
@@ -98,7 +99,7 @@ header {
                 align-items: flex-end;
             }
             .menu-card-valid {
-                background-color: var(--thirdly);
+                background-color: $third;
                 margin-right: -4rem;
                 width: 4rem;
                 transition: all 0.4s;
@@ -123,9 +124,10 @@ header {
     }
 }
 
+// ORDER
 .btn-order {
     text-align: center;
-    height: 9rem;
+    height: 5rem;
     margin-top: 2rem;
     button { 
     @include btn-standard;

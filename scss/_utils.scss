@@ -1,3 +1,5 @@
+@import 'variables';
+
 @mixin zoom {
     transform: scale(1.02);
     opacity: 0.9;
@@ -11,9 +13,9 @@
     padding: 1rem 1rem;
     border: none;
     border-radius: 2rem;
-    background: linear-gradient(to top, var(--primary), var(--secondary));
+    background: linear-gradient(to top, $primary, $second);
     margin-bottom: 2rem;
-    box-shadow: var(--box-shadow);
+    box-shadow: $box-shadow;
 }
 
 @mixin btn-steps {
@@ -26,7 +28,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color:var(--primary);
+    background-color: $primary;
     border-radius: 40px;
     position: absolute;
     bottom: 1rem;
@@ -44,7 +46,7 @@
     }
     .fa-solid {
         color: transparent;
-        background-image: linear-gradient(to top, var(--primary), var(--secondary));
+        background-image: linear-gradient(to top, $primary, $second);
         background-clip: text;
         -webkit-background-clip: text;
         opacity: 0;

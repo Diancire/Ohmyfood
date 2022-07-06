@@ -1,7 +1,34 @@
+@import 'variables';
+
+// LOADER
+
+.loader {
+    display: grid;
+    place-items: center;
+    position: fixed;
+    inset: 0;
+    height: 100vh;
+    background-color: #f0eaf0;
+    z-index: 1;
+    opacity: 0.8;
+    animation: loader 3s 3s both;
+    &::after {
+        content: "";
+        height: 5rem;
+        width: 5rem;
+        border: 5px solid transparent;
+        border-top: 5px solid $second;
+        border-right: 1px solid $second;
+        border-radius: 30rem;
+        border-style: dashed;
+        animation: loader-icon 3s both;
+    }
+}
+
 // HEADER
 
 header {
-    font-family: var(--font-family-title);
+    font-family: $font-family-title;
     text-align: center;
     padding: 0.3rem;
     box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.25);
@@ -13,7 +40,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #f3f3f3;
+    background-color: #f2f2f2;
     padding: 0.5rem;
     i {
         font-size: 1rem;
@@ -28,10 +55,11 @@ header {
 
 .reservation {
     text-align: center;
-    background-color: var(--background);
+    background-color: $background;
     p {
         margin-bottom: 2rem;
         font-weight: 300;
+        padding: 0 0.8rem
     }
     button {
         @include btn-standard;
@@ -48,29 +76,34 @@ header {
     counter-reset: steps;
     ol {
         padding: 0 1rem 2rem 1rem;
-        display: flex;
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
         gap: 2rem;
         @include md {
-            flex-direction: column;
+            grid-template-columns: repeat(1,1fr);
         }
         @include sm {
-            flex-direction: column;
+            grid-template-columns: repeat(1,1fr);
         }
     } li {
-        background-color: var(--background);
+        background-color: $background;
         padding: 1.5rem 2rem;
-        box-shadow: var(--box-shadow);
+        box-shadow: $box-shadow;
         border-radius: 2rem;
         position: relative;
         &:hover {
             @include zoom;
+        background-color: lighten($primary, $amount: 30%);
+        i:before {
+            color: $primary;
+        }
         }
         &::before {
            @include btn-steps;
         }
     } i {
         margin-right: 1rem;
-        color: var(--grey-light);
+        color: $grey-light;
         font-size: 1rem;
     }
 }
@@ -78,7 +111,7 @@ header {
 // RESTAURANT
 
 .restaurants {
-    background-color: var(--background);
+    background-color: $background;
     padding: 0 1rem;
     .restaurants-menu {
         display: grid;
@@ -96,7 +129,7 @@ header {
             position: absolute;
             height: 2rem;
             width: 5rem;
-            background-color: var(--thirdly);
+            background-color: $third;
             color: darken($color: #99E2D0, $amount: 50);
             display: grid;
             place-items: center;
@@ -115,6 +148,7 @@ header {
             position: relative;
             background-color: white;
             border-radius: 0 0 2rem 2rem;
+            box-shadow: $box-shadow;
             color: black;
             h3, p {
                 padding-left: 1rem;
@@ -130,10 +164,10 @@ header {
 // FOOTER 
 
 footer {
-    background-color: var(--background-grey-dark);
+    background-color: $background-grey-dark;
     color: white;
     .footer-logo {
-        font-family: var(--font-family-title);
+        font-family: $font-family-title;
         font-weight: 500;
     }
     ul {
