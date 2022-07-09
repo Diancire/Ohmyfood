@@ -1,0 +1,19 @@
+footer {
+    background-color: $background-grey-dark;
+    color: white;
+    .footer-logo {
+        font-family: $font-family-title;
+        font-weight: 500;
+    }
+    ul {
+        li {
+            padding: 0.3rem 0;
+            a {
+                color: white;
+            }
+            i {
+                padding-right: 0.5rem;
+            }
+        }
+    }
+}
